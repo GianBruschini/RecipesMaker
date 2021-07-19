@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginMVP.LoginActivity">
+
+    <TextView
+        android:id="@+id/idLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in!"
+        android:textSize="34sp"
+        android:fontFamily="@font/opensans_bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="40dp"
+         />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/montserrat_medium"
+        android:layout_width="300dp"
+        android:hint="Email"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idLogin"
+        android:layout_centerHorizontal="true"
+        >
+    </EditText>
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailEditText"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:layout_centerHorizontal="true"
+        >
+    </EditText>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Sign in"
+        android:textColor="#ffff"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_design">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSignUp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLogin"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Sign up"
+        android:textColor="#ffff"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_design">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+</RelativeLayout>

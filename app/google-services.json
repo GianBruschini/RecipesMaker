@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "67269511390",
+    "firebase_url": "https://recipemaker-53c12-default-rtdb.firebaseio.com",
+    "project_id": "recipemaker-53c12",
+    "storage_bucket": "recipemaker-53c12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67269511390:android:c35e99b63f6362aefcda4f",
+        "android_client_info": {
+          "package_name": "com.gian.recipesmaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67269511390-u8n2fsd0ct3p93h4bl5hgpf07a5fussq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZUKVJXSRcNO46vHkopc3ri14O1FG3yYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67269511390-u8n2fsd0ct3p93h4bl5hgpf07a5fussq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67269511390:android:c4fa71a90ac39c1dfcda4f",
+        "android_client_info": {
+          "package_name": "com.gian.recipesmaker.login.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67269511390-44gpkg941bs3112hnpdjs76gd9lmfhg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gian.recipesmaker.login.login",
+            "certificate_hash": "183e7cbbb5b241ac56de46a8b7bbfacbfc032af2"
+          }
+        },
+        {
+          "client_id": "67269511390-u8n2fsd0ct3p93h4bl5hgpf07a5fussq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZUKVJXSRcNO46vHkopc3ri14O1FG3yYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67269511390-u8n2fsd0ct3p93h4bl5hgpf07a5fussq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
