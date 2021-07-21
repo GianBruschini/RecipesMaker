@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecipesMaker</string>
+    <string name="errorEmailNull">Email cannot be null</string>
+    <string name="errorPasswordNull">Password cannot be null</string>
 </resources>

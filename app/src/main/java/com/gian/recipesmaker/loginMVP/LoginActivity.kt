@@ -6,11 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.basgeekball.awesomevalidation.AwesomeValidation
+import com.basgeekball.awesomevalidation.ValidationStyle
+import com.basgeekball.awesomevalidation.utility.RegexTemplate
 import com.gian.recipesmaker.Home.HomeActivity
+import com.gian.recipesmaker.SignUpMVP.SignUpActivity
 import com.gian.recipesmaker.databinding.ActivityLoginBinding
 
+
+
+
 class LoginActivity : AppCompatActivity(), LoginView {
-    private val loginPresenter = LoginPresenter(this, LoginInteractor())
+
+    private val loginPresenter= LoginPresenter(this,LoginInteractor(),this)
     private lateinit var binding: ActivityLoginBinding
     private lateinit var progressDialog:ProgressDialog
     private lateinit var awesomeValidation: AwesomeValidation
@@ -23,13 +30,14 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     private fun initializeUI() {
+        awesomeValidation = AwesomeValidation(ValidationStyle.BASIC)
         binding.buttonLogin.setOnClickListener {
             loginPresenter.validateUser(binding.emailEditText.text.toString(),
                 binding.passwordEditText.text.toString())
         }
 
         binding.buttonSignUp.setOnClickListener {
-
+            navigateToActivity(Intent(this,SignUpActivity::class.java))
         }
     }
 
@@ -45,7 +53,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun showEmailError() {
-        Toast.makeText(this,"Error al ingresar el email",Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Email e",Toast.LENGTH_LONG).show()
     }
 
     override fun showPasswordError() {
@@ -53,21 +61,22 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun showEmailIsNull() {
-        Toast.makeText(this,"El email es null",Toast.LENGTH_LONG).show()
+        binding.emailEditText.error = "You have to type an email"
     }
 
     override fun showPasswordIsNull() {
-        Toast.makeText(this,"La password es null",Toast.LENGTH_LONG).show()
+        binding.passwordEditText.error = "You have to type a password"
     }
 
-
     override fun showDataBaseError() {
-        Toast.makeText(this,"La password es null",Toast.LENGTH_LONG).show()
+
     }
 
     override fun navigateTOActivity() {
         navigateToActivity(Intent(this, HomeActivity::class.java))
     }
+
+
 
     private fun navigateToActivity(intent: Intent) {
         startActivity(intent)

@@ -1,49 +1,55 @@
 package com.gian.recipesmaker.loginMVP
 
+import android.content.Context
 import com.gian.recipesmaker.loginMVP.LoginActivity
 import com.gian.recipesmaker.loginMVP.LoginInteractor
 
-class LoginPresenter (var context: LoginActivity?, val loginInteractor: LoginInteractor) :
-    LoginInteractor.onLoginFinishedListener {
+
+
+
+class LoginPresenter
+constructor(var loginView: LoginView?,
+            val loginInteractor: LoginInteractor,
+            val context: LoginActivity): LoginInteractor.onLoginFinishedListener  {
 
     fun validateUser(username:String, password:String){
-        context?.showProgressDialog()
-            loginInteractor.validateEmailAndPassword(username,password,this,context)
+        loginView!!.showProgressDialog()
+        loginInteractor.validateEmailAndPassword(username,password,this,context)
 
     }
 
     override fun onEmailError() {
-        context?.hideProgressDialog()
-        context?.showEmailError()
+        loginView!!.hideProgressDialog()
+        loginView!!.showEmailError()
 
     }
 
     override fun onPasswordError() {
-        context?.hideProgressDialog()
-        context?.showPasswordError()
+        loginView!!.hideProgressDialog()
+        loginView!!.showPasswordError()
     }
 
     override fun onSuccess() {
-        context?.hideProgressDialog()
-        context?.navigateTOActivity()
+        loginView!!.hideProgressDialog()
+        loginView!!.navigateTOActivity()
     }
 
     override fun onEmailNull() {
-        context?.hideProgressDialog()
-        context?.showEmailIsNull()
+        loginView!!.showEmailIsNull()
+        loginView!!.hideProgressDialog()
     }
 
     override fun onPasswordNull() {
-        context?.hideProgressDialog()
-        context?.showPasswordIsNull()
+        loginView!!.hideProgressDialog()
+        loginView!!.showPasswordIsNull()
     }
 
     override fun onDataBaseError() {
-      context?.showDataBaseError()
+        loginView!!.showDataBaseError()
     }
 
     fun onDestroy(){
-        context = null
+        loginView = null
     }
 
 
