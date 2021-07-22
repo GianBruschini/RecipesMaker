@@ -4,7 +4,9 @@ interface SignUpView {
     fun successRegistration()
     fun emailIsNull()
     fun passwordIsNull()
-    fun emailNotExits()
+    fun emailExist()
     fun showDataBaseError()
+    fun emailIsNotValid()
+
 
 }

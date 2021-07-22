@@ -1,5 +1,6 @@
 package com.gian.recipesmaker.SignUpMVP
 
+import android.widget.Toast
 import com.gian.recipesmaker.loginMVP.LoginInteractor
 
 class SignUpPresenter(var signUpView: SignUpView,
@@ -15,7 +16,7 @@ class SignUpPresenter(var signUpView: SignUpView,
     }
 
     override fun onEmailExist() {
-        TODO("Not yet implemented")
+        signUpView.emailExist()
     }
 
     override fun onEmailIsNull() {
@@ -27,7 +28,7 @@ class SignUpPresenter(var signUpView: SignUpView,
     }
 
     override fun onEmailError() {
-        signUpView.emailNotExits()
+        signUpView.emailIsNotValid()
     }
 
     override fun onDatabaseError() {

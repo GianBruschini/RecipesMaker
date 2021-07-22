@@ -53,11 +53,11 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun showEmailError() {
-        Toast.makeText(this,"Email e",Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Email not exist",Toast.LENGTH_LONG).show()
     }
 
     override fun showPasswordError() {
-        Toast.makeText(this,"Error al ingresar la password",Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Password not exist",Toast.LENGTH_LONG).show()
     }
 
     override fun showEmailIsNull() {

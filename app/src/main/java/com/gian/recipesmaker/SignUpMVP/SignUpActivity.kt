@@ -32,12 +32,17 @@ class SignUpActivity : AppCompatActivity(),SignUpView,View.OnClickListener {
         binding.passwordlSignUp.error = getString(R.string.errorPasswordNull)
     }
 
-    override fun emailNotExits() {
-        Toast.makeText(this,"Email is not valid",Toast.LENGTH_SHORT).show()
+    override fun emailExist() {
+        Toast.makeText(this,"Email repeated",Toast.LENGTH_SHORT).show()
     }
+
 
     override fun showDataBaseError() {
         Toast.makeText(this,"Database Error, try again later",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun emailIsNotValid() {
+        Toast.makeText(this,"Email is not valid",Toast.LENGTH_SHORT).show()
     }
 
 

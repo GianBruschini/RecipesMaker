@@ -1,8 +1,6 @@
 package com.gian.recipesmaker.loginMVP
 
-import android.content.Intent
 import android.widget.Toast
-import com.gian.recipesmaker.Home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -45,7 +43,7 @@ class LoginInteractor {
             !EMAIL_ADDRESS_PATTERN.matcher(email).matches() -> listener.onEmailError()
             else -> {
                 if (context != null) {
-                    checkIfUserExistAndSignIn(context,email,listener)
+                    checkIfUserExistAndSignIn(context,email,password,listener)
 
                 }
             }
@@ -55,25 +53,50 @@ class LoginInteractor {
     private fun checkIfUserExistAndSignIn(
         context: LoginActivity,
         email: String,
+        password: String,
         listener: onLoginFinishedListener
     ) {
+        val email = encodeString(email)
         val rootRef = FirebaseDatabase.getInstance().reference
         val userNameRef = rootRef.child("Users").
-        child("Accounts").child(email)
+        child("accounts").orderByChild("email").equalTo(email)
         val eventListener: ValueEventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    listener.onSuccess()
+                    checkIfPasswordIsCorrect(password,listener)
                 }else{
                     listener.onEmailError()
                 }
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 Toast.makeText(context,"Database error",Toast.LENGTH_SHORT).show() //Don't ignore errors!
             }
         }
         userNameRef.addListenerForSingleValueEvent(eventListener)
+    }
+
+    private fun checkIfPasswordIsCorrect(password: String, listener: onLoginFinishedListener) {
+        val rootRef = FirebaseDatabase.getInstance().reference
+        val passwordRef = rootRef.child("Users").
+        child("accounts").orderByChild("password").equalTo(password)
+        val eventListener: ValueEventListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    listener.onSuccess()
+                }else{
+                    listener.onPasswordError()
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+                listener.onDataBaseError()
+            }
+        }
+
+        passwordRef.addListenerForSingleValueEvent(eventListener)
+    }
+
+    fun encodeString(string: String): String {
+        return string.replace(".", ",")
     }
 
 
