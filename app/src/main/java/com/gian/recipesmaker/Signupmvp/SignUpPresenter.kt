@@ -1,7 +1,4 @@
-package com.gian.recipesmaker.SignUpMVP
-
-import android.widget.Toast
-import com.gian.recipesmaker.loginMVP.LoginInteractor
+package com.gian.recipesmaker.Signupmvp
 
 class SignUpPresenter(var signUpView: SignUpView,
                       var context:SignUpActivity,

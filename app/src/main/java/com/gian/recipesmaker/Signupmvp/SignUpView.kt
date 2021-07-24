@@ -1,4 +1,4 @@
-package com.gian.recipesmaker.SignUpMVP
+package com.gian.recipesmaker.Signupmvp
 
 interface SignUpView {
     fun successRegistration()

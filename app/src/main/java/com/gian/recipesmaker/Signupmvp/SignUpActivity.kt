@@ -1,12 +1,10 @@
-package com.gian.recipesmaker.SignUpMVP
+package com.gian.recipesmaker.Signupmvp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.ScriptGroup
 import android.view.View
 import android.widget.Toast
 import com.gian.recipesmaker.R
-import com.gian.recipesmaker.databinding.ActivityLoginBinding
 import com.gian.recipesmaker.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity(),SignUpView,View.OnClickListener {

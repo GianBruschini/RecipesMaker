@@ -1,4 +1,4 @@
-package com.gian.recipesmaker.loginMVP
+package com.gian.recipesmaker.loginmvp
 
 interface LoginView {
     fun showProgressDialog()

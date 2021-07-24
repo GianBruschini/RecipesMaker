@@ -1,4 +1,4 @@
-package com.gian.recipesmaker.loginMVP
+package com.gian.recipesmaker.loginmvp
 
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth

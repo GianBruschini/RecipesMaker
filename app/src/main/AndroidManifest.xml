@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipesMaker">
-        <activity android:name=".SignUpMVP.SignUpActivity"></activity>
+        <activity android:name=".Signupmvp.SignUpActivity"></activity>
         <activity android:name=".Home.HomeActivity" />
-        <activity android:name=".loginMVP.LoginActivity">
+        <activity android:name=".loginmvp.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

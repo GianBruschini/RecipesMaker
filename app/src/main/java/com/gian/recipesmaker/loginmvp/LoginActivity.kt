@@ -1,4 +1,4 @@
-package com.gian.recipesmaker.loginMVP
+package com.gian.recipesmaker.loginmvp
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -7,9 +7,8 @@ import android.os.Bundle
 import android.widget.Toast
 import com.basgeekball.awesomevalidation.AwesomeValidation
 import com.basgeekball.awesomevalidation.ValidationStyle
-import com.basgeekball.awesomevalidation.utility.RegexTemplate
 import com.gian.recipesmaker.Home.HomeActivity
-import com.gian.recipesmaker.SignUpMVP.SignUpActivity
+import com.gian.recipesmaker.Signupmvp.SignUpActivity
 import com.gian.recipesmaker.databinding.ActivityLoginBinding
 
 

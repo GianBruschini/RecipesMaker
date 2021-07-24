@@ -1,11 +1,5 @@
 package com.gian.recipesmaker.di
 
-import android.app.Activity
-import com.gian.recipesmaker.loginMVP.LoginActivity
-import com.gian.recipesmaker.loginMVP.LoginInteractor
-import com.gian.recipesmaker.loginMVP.LoginPresenter
-import com.gian.recipesmaker.loginMVP.LoginView
-
 
 //@Module
 //@InstallIn(ApplicationComponent::class) // para proveer las dependencias a nivel de app

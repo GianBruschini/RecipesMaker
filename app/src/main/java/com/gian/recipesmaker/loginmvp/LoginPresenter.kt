@@ -1,10 +1,4 @@
-package com.gian.recipesmaker.loginMVP
-
-import android.content.Context
-import com.gian.recipesmaker.loginMVP.LoginActivity
-import com.gian.recipesmaker.loginMVP.LoginInteractor
-
-
+package com.gian.recipesmaker.loginmvp
 
 
 class LoginPresenter
